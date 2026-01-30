@@ -23,7 +23,7 @@ export default function Page() {
     <div className="flex h-full">
       <aside className="w-64 h-full bg-gray-100 px-4 py-6 flex flex-col">
         <div className="flex items-center gap-2 px-2 mb-8">
-          <Image src={snowuilogo} alt="Logo" height={32} width={119} />
+          <Image src={snowuilogo} alt="Logo" height={32} width={119} loading="eager" />
         </div>
 
         {/* sidebar menu */}

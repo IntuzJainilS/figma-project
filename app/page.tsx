@@ -52,29 +52,28 @@ export default function Home() {
 
       <main className="flex-1 w-full min-h-screen p-4 flex flex-col">
         <Header />
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 w-full gap-4 mt-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 w-full mt-4 place-items-center">
           {stats.map((item) => (
             <div
               key={item.title}
-              className={`w-full p-6 rounded-xl bg-linear-to-r ${item.bg} text-white shadow flex flex-col`}
-            >
+              className={`min-w-40 w-42 h-23 sm:w-full sm:h-auto p-4 sm:p-6 rounded-3xl bg-linear-to-r ${item.bg} text-white shadow flex flex-col`}>
               <div className="flex justify-between items-start">
                 <p className="text-sm opacity-80 w-49 h-6 ">
                   {item.title}
                 </p>
                 <div className="flex text-right w-10 h-7 pt-0.5 pb-0.5 px-2">
-                 <Image src={item.image} alt="icon" height={24} width={24} className="opacity-100" />
+                  <Image src={item.image} alt="icon" height={24} width={24} className="opacity-100" />
                 </div>
-               
+
               </div>
 
 
               <div className="flex justify-between items-end mt-4">
-                <h2 className="text-2xl font-semibold leading-8">
+                <h2 className="text-lg sm:text-2xl font-semibold leading-tight">
                   {item.value}
                 </h2>
 
-                <p className="text-sm opacity-80">
+                <p className="text-xs sm:text-sm opacity-80">
                   {item.change}
                 </p>
               </div>
