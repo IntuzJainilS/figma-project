@@ -11,7 +11,7 @@ import Image from 'next/image'
 
 const Header = () => {
    return (
-        <header className='flex items-center justify-between rounded-xl px-6 py-4 mb-2 bg-white border-b border-gray-100'>
+        <header className='hidden md:flex items-center justify-between rounded-xl px-6 py-4 mb-2 bg-gray-100 border-b border-gray-100'>
             <div className='flex items-center gap-4'>
                 <div className='flex items-center gap-2'>
                     <button className='p-1 hover:bg-gray-100 rounded-md transition-colors'>
@@ -31,7 +31,7 @@ const Header = () => {
 
             <div className='flex items-center gap-4'>
                 {/* Search Bar */}
-                <div className='relative flex items-center bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-200 focus-within:ring-1 focus-within:ring-blue-500'>
+                <div className='relative flex items-center bg-gray-200 px-3 py-1.5 rounded-lg border border-gray-200 focus-within:ring-1 focus-within:ring-blue-500'>
                     <Image src={search} alt="search" width={16} height={16} className="opacity-50" />
                     <input 
                         type='search' 

@@ -20,8 +20,8 @@ export default function Page() {
   const [active, setActive] = useState("Overview");
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      <aside className="w-64 h-full bg-white border-r px-4 py-6 flex flex-col">
+    <div className="flex h-full">
+      <aside className="w-64 h-full bg-gray-100 px-4 py-6 flex flex-col">
         <div className="flex items-center gap-2 px-2 mb-8">
           <Image src={snowuilogo} alt="Logo" height={32} width={119} />
         </div>
@@ -35,7 +35,7 @@ export default function Page() {
               className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition
                 ${active === item.name
                   ? "bg-gray-100 font-medium"
-                  : "text-gray-500 hover:bg-gray-50"
+                  : "text-black hover:bg-gray-50"
                 }
               `}
             >
@@ -51,7 +51,7 @@ export default function Page() {
         </nav>
         <div className=" flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 cursor-pointer mt-auto">
           <Image className="rounded-full" src={Byewind} width={32} height={32} alt="profile" />
-          <p className="text-sm font-medium text-gray-700">ByeWind</p>
+          <p className="text-sm font-medium text-black">ByeWind</p>
         </div>
       </aside>
 
