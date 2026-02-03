@@ -71,7 +71,7 @@ export default function ProjectsTable() {
         <span>Manager</span>
         <span className="hidden md:block">Date</span>  
         <span className="hidden md:block">Amount</span>
-        <span className="text-right">Status</span>
+        <span className="text-right mr-10">Status</span>
       </div>
 
       <div className="space-y-2">

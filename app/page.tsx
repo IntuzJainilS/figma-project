@@ -52,17 +52,18 @@ export default function Home() {
 
       <main className="flex-1 w-full min-h-screen p-4 flex flex-col">
         <Header />
+        <p className="text-center md:hidden font-bold">Overview</p>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 w-full mt-4 place-items-center">
           {stats.map((item) => (
             <div
               key={item.title}
-              className={`min-w-40 w-42 h-23 sm:w-full sm:h-auto p-4 sm:p-6 rounded-3xl bg-linear-to-r ${item.bg} text-white shadow flex flex-col`}>
+              className={`w-full h-23 sm:w-full sm:h-auto p-4 sm:p-6 rounded-3xl bg-linear-to-r ${item.bg} text-white shadow flex flex-col`}>
               <div className="flex justify-between items-start">
                 <p className="text-sm opacity-80 w-49 h-6 ">
                   {item.title}
                 </p>
-                <div className="flex text-right w-10 h-7 pt-0.5 pb-0.5 px-2">
-                  <Image src={item.image} alt="icon" height={24} width={24} className="opacity-100" />
+                <div className="flex justify-end items-center shrink-0 ml-2">
+                  <Image src={item.image} alt="icon" height={24} width={33} className="opacity-100" />
                 </div>
 
               </div>

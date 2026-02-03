@@ -66,9 +66,7 @@ export default function UsersChartSection() {
 
     return (
         <div className="bg-white rounded-xl p-5 shadow mt-10">
-            {/* TOP BAR */}
             <div className="flex items-center justify-between mb-4">
-                {/* Tabs */}
                 <div className="flex gap-6 text-sm">
                     {tabs.map((tab) => (
                         <button
@@ -86,13 +84,19 @@ export default function UsersChartSection() {
 
                 {/* Right */}
                 <div className="flex items-center gap-3">
-                    <select className="border rounded-lg px-2 py-1 text-sm">
+                    <select className="border rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
                         <option>Week</option>
                         <option>Month</option>
                         <option>Year</option>
                     </select>
 
-                    <button className="p-2 rounded hover:bg-gray-100">📈</button>
+                    <select className="border rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
+                        <option>Graph1</option>
+                        <option>Graph2</option>
+                        <option>Graph3</option>
+                    </select>
+
+                    {/* <button className="p-2 rounded hover:bg-gray-100">📈</button> */}
                     <button className="p-2 rounded hover:bg-gray-100">⋯</button>
                 </div>
             </div>
