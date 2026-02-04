@@ -34,7 +34,7 @@ export default function Page() {
               onClick={() => setActive(item.name)}
               className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition
                 ${active === item.name
-                  ? "bg-gray-100 font-medium"
+                  ? "bg-gray-200 font-medium opacity-100 shadow-sm"
                   : "text-black hover:bg-gray-200"
                 }
               `}

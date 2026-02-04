@@ -29,7 +29,7 @@ export default function ProductTraffic() {
       {
         label: "SnowUI",
         data: [90,100,95,110,130,120,115,125,135,120,110,105],
-        backgroundColor: "#d1d5db",
+        backgroundColor: "#6082B6",
         barThickness: 3,
         borderRadius: 4,
       },
