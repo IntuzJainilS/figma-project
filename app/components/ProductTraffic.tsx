@@ -13,32 +13,46 @@ import { Bar } from "react-chartjs-2";
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 export default function ProductTraffic() {
+  const labels = [
+    "Jan", "", "", "",
+    "Feb", "", "", "",
+    "Mar", "", "", "",
+    "Apr", "", "", "",
+    "May", "", "", "",
+    "Jun", "", "", "",
+    "Jul", "", "", "",
+    "Aug", "", "", "",
+    "Sep", "", "", "",
+    "Oct", "", "", "",
+    "Nov", "", "", "",
+    "Dec", "", "", "",
+  ];
+
   const data = {
-    labels: [
-      "Jan","Feb","Mar","Apr","May","Jun",
-      "Jul","Aug","Sep","Oct","Nov","Dec",
-    ],
+    labels,
     datasets: [
       {
-        label: "All",
-        data: [120,140,130,150,170,160,155,165,175,160,150,145],
-        backgroundColor: "#111827",
+        label: "Dashboard",
+        data: Array.from({ length: 48 }, () => Math.floor(70 + Math.random() * 40)),
+        backgroundColor: "#ef4444",
         barThickness: 3,
-        borderRadius: 4,
+        categoryPercentage: 1.0,
+        barPercentage: 1.0,
+        borderRadius: 6,
       },
       {
         label: "SnowUI",
-        data: [90,100,95,110,130,120,115,125,135,120,110,105],
-        backgroundColor: "#6082B6",
+        data: Array.from({ length: 48 }, () => Math.floor(90 + Math.random() * 50)),
+        backgroundColor: "#9ca3af",
         barThickness: 3,
-        borderRadius: 4,
+        borderRadius: 6,
       },
       {
-        label: "Dashboard",
-        data: [60,70,65,80,100,90,85,95,105,90,80,75],
-        backgroundColor: "#ef4444",
+        label: "All",
+        data: Array.from({ length: 48 }, () => Math.floor(120 + Math.random() * 60)),
+        backgroundColor: "#111827",
         barThickness: 3,
-        borderRadius: 4,
+        borderRadius: 6,
       },
     ],
   };
@@ -48,12 +62,7 @@ export default function ProductTraffic() {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "top",
-        align: "end",
-        labels: {
-          usePointStyle: true,
-          boxWidth: 6,
-        },
+       display:false,
       },
       tooltip: {
         backgroundColor: "#111827",
@@ -63,30 +72,53 @@ export default function ProductTraffic() {
     scales: {
       y: {
         display: false,
+        stacked: true,
       },
       x: {
         grid: { display: false },
+        stacked: true,
+        ticks: {
+          autoSkip: false,
+          maxRotation: 0,
+        },
       },
     },
   };
 
   return (
     <div className="bg-white rounded-xl p-6 shadow mt-10">
-      {/* HEADER */}
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-red-500 font-medium">
-          Product Traffic
-        </h3>
+     <div className="flex items-center justify-between mb-4">
+  <h3 className="text-red-500 font-medium">Product Traffic</h3>
 
-        <button className="p-2 rounded-lg hover:bg-gray-100">
-          ⋯
-        </button>
-      </div>
+  <div className="flex items-center gap-4">
+    {/* RADIO */}
+    <div className="flex items-center gap-4 text-sm text-gray-500">
+      <label className="flex items-center gap-1 cursor-pointer">
+        <span className="w-2 h-2 rounded-full bg-black"></span>
+        All
+      </label>
 
-      {/* CHART */}
+      <label className="flex items-center gap-1 cursor-pointer">
+        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+        SnowUI
+      </label>
+
+      <label className="flex items-center gap-1 cursor-pointer">
+        <span className="w-2 h-2 rounded-full bg-red-500"></span>
+        Dashboard
+      </label>
+    </div>
+
+    {/* MENU */}
+    <button className="p-2 rounded-lg hover:bg-gray-100">⋯</button>
+  </div>
+</div>
+
+
       <div className="h-65">
         <Bar data={data} options={options} />
       </div>
     </div>
   );
 }
+

@@ -25,8 +25,11 @@ export default function DeviceLocationTraffic() {
           "#3b82f6",
           "#f3f4f6",
         ],
-        borderRadius: 10,
-        barThickness: 40,
+        borderRadius: 16,
+        borderSkipped: false,
+        barThickness: 60,
+        categoryPercentage: 0.6,
+        barPercentage: 0.9,
       },
     ],
   };
@@ -37,8 +40,11 @@ export default function DeviceLocationTraffic() {
       {
         data: [180, 220, 200, 120, 260, 190],
         backgroundColor: "#f3f4f6",
-        borderRadius: 10,
-        barThickness: 40,
+        borderRadius: 16,
+        borderSkipped: false,
+        barThickness: 60,
+        categoryPercentage: 0.6,
+        barPercentage: 0.9,
       },
     ],
   };
@@ -46,22 +52,46 @@ export default function DeviceLocationTraffic() {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 10,
+        bottom: 0,
+        left: 0,
+        right: 0,
+      },
+    },
     plugins: {
       legend: { display: false },
       tooltip: {
         backgroundColor: "#111827",
-        padding: 8,
+        padding: 10,
+        borderRadius: 8,
         displayColors: false,
+        titleFont: { size: 12 },
+        bodyFont: { size: 12 },
         callbacks: {
           label: (ctx: any) => `${ctx.raw}K`,
         },
       },
     },
     scales: {
-      y: { display: false },
-      x: { grid: { display: false } },
+      y: {
+        display: false,
+        grid: { display: false },
+        border: { display: false },
+      },
+      x: {
+        grid: { display: false },
+        border: { display: false }, // removes bottom line
+        ticks: {
+          padding: 12,
+          font: { size: 12 },
+          color: "#111827",
+        },
+      },
     },
   };
+
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-10">
