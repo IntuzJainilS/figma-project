@@ -46,11 +46,11 @@ export default function Home() {
   return (
     <div className="flex min-h-screen w-full bg-gray-100 overflow-x-hidden">
       {/* SIDEBAR */}
-      <aside className="hidden md:block shrink-0">
+      <aside className="hidden md:block shrink-0 min-w-0">
         <Sidebar />
       </aside>
 
-      <main className="flex-1 w-full min-h-screen p-4 flex flex-col">
+      <main className="flex-1 min-w-0 w-full min-h-screen p-4 flex flex-col">
         <Header />
         <p className="text-center md:hidden font-bold">Overview</p>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 w-full mt-4 place-items-center">

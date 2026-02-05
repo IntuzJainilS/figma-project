@@ -32,10 +32,10 @@ export default function Page() {
             <button
               key={item.name}
               onClick={() => setActive(item.name)}
-              className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition
+              className={`w-full text-black flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all duration-200 active:scale-95
                 ${active === item.name
-                  ? "bg-gray-200 font-medium opacity-100 shadow-sm"
-                  : "text-black hover:bg-gray-200"
+                  ? "bg-gray-200/80 text-black font-semibold"
+                  : "text-black hover:bg-gray-200 hover:text-black"
                 }
               `}
             >

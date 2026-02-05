@@ -61,50 +61,71 @@ const statusStyles: Record<string, string> = {
 
 export default function ProjectsTable() {
   return (
-    <div className="bg-white rounded-xl p-6 shadow mt-10">
-      <div className="flex items-center justify-between mb-5">
-        <h3 className="text-teal-500 font-medium">Projects</h3>
-        <button className="p-2 rounded-lg hover:bg-gray-100">⋯</button>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-4 text-sm text-gray-400 px-4 mb-2">
-        <span>Manager</span>
-        <span className="hidden md:block">Date</span>  
-        <span className="hidden md:block">Amount</span>
-        <span className="text-right mr-10">Status</span>
-      </div>
-
-      <div className="space-y-2">
-        {projects.map((item) => (
-          <div
-            key={item.id}
-            className="grid grid-cols-2 md:grid-cols-4 items-center bg-gray-50 px-4 py-3 rounded-lg hover:bg-gray-100 transition"
-          >
-            <div className="flex items-center gap-3">
-              <Image
-                src={item.avatar}
-                alt={item.name}
-                width={32}
-                height={32}
-                className="rounded-full"
-              />
-              <span className="text-sm font-medium truncate">{item.name}</span>
-            </div>
-
-            <span className="hidden md:block text-sm">{item.date}</span>
-
-            <span className="hidden md:block text-sm font-semibold">{item.amount}</span>
-
-            <div className="text-right">
-              <span
-                className={`text-xs px-3 py-1 rounded-full font-medium ${statusStyles[item.status]}`}
-              >
-                {item.status}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
+  <div className="bg-white rounded-xl p-6 shadow mt-10">
+    <div className="flex items-center justify-between mb-5">
+      <h3 className="text-teal-500 font-medium">Projects</h3>
+      <button className="p-2 rounded-lg hover:bg-gray-100">⋯</button>
     </div>
-  );
+
+    <div className="overflow-x-auto">
+      <table className="w-full border-separate border-spacing-y-2 table-fixed">
+        {/* HEADER */}
+        <thead>
+          <tr className="text-sm text-gray-400">
+            <th className="text-left font-normal px-3 py-2">Manager</th>
+            <th className="hidden md:table-cell text-left font-normal px-3 py-2">
+              Date
+            </th>
+            <th className="hidden md:table-cell text-left font-normal px-3 py-2">
+              Amount
+            </th>
+            <th className="text-right font-normal pr-15 px-3 py-2 w-30">Status</th>
+          </tr>
+        </thead>
+
+        {/* BODY */}
+        <tbody>
+          {projects.map((item) => (
+            <tr
+              key={item.id}
+              className="bg-gray-50 hover:bg-gray-100 transition rounded-lg"
+            >
+              <td className="px-3 py-3 rounded-l-lg">
+                <div className="flex items-center gap-3 min-w-0">
+                  <Image
+                    src={item.avatar}
+                    alt={item.name}
+                    width={32}
+                    height={32}
+                    className="rounded-full"
+                  />
+                  <span className="text-sm font-medium truncate">
+                    {item.name}
+                  </span>
+                </div>
+              </td>
+
+              <td className="hidden md:table-cell px-3 py-3 text-sm whitespace-nowrap">
+                {item.date}
+              </td>
+
+              <td className="hidden md:table-cell px-3 py-3 text-sm whitespace-nowrap">
+                {item.amount}
+              </td>
+
+              <td className="px-3 py-3 rounded-r-lg">
+                <span
+                  className={`inline-flex justify-center min-w-24 text-xs px-3 py-1 rounded-full font-medium whitespace-nowrap ${statusStyles[item.status]}`}
+                >
+                  {item.status}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+);
+
 }
