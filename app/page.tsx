@@ -57,7 +57,7 @@ export default function Home() {
           {stats.map((item) => (
             <div
               key={item.title}
-              className={`w-full h-23 sm:w-full sm:h-auto p-4 sm:p-6 rounded-3xl bg-linear-to-r ${item.bg} text-white shadow flex flex-col`}>
+              className={`w-full h-23 sm:w-full sm:h-auto p-4 sm:p-6 rounded-3xl bg-linear-to-b ${item.bg} text-white shadow flex flex-col`}>
               <div className="flex justify-between items-start">
                 <p className="text-sm opacity-80 w-49 h-6 ">
                   {item.title}

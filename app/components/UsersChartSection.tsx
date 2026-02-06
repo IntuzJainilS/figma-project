@@ -1,7 +1,9 @@
 "use client";
 
-import graphicon from '@/public/graph.svg'
-import downicon from '@/public/down.svg'
+// import graphicon from '@/public/graph.svg'
+// import downicon from '@/public/down.svg'
+// import { BsGraphUpArrow } from "react-icons/bs";
+
 
 import {
     Chart as ChartJS,
@@ -77,7 +79,7 @@ export default function UsersChartSection() {
                             key={tab}
                             onClick={() => setActiveTab(tab)}
                             className={`pb-2 transition ${activeTab === tab
-                                ? "text-purple-600 border-b-2 border-purple-600 font-medium"
+                                ? "text-purple-600 font-medium"
                                 : "text-gray-400"
                                 }`}
                         >
@@ -88,23 +90,24 @@ export default function UsersChartSection() {
 
                 {/* Right */}
                 <div className="flex items-center gap-3">
-                    <select className="border rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
+                    <select className="rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
                         <option>Week</option>
                         <option>Month</option>
                         <option>Year</option>
                     </select>
 
-                    {/* <select className="border rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
-                        <option className='bg-gray-300'>📈</option>
-                        <option className='bg-gray-300'>📊</option>
-                        <option className='bg-gray-300'>📉</option>
-                    </select> */}
+                    <select className="rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
+                        <option className='bg-gray-600'>📈</option>
+                        <option className='bg-gray-600'>📊</option>
+                        <option className='bg-gray-600'>📉</option>
+                    </select>
 
-                     <select className="border rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
+                     {/* <select className="border rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
                         <option >Graph 1</option>
                         <option >Graph 2</option>
                         <option >Graph 2</option>
-                    </select>
+                        <option className='bg-cyan-300'><BsGraphUpArrow /></option>
+                    </select> */}
 
                     {/* <button className="p-2 rounded hover:bg-gray-100">📈</button> */}
                     <button className="p-2 rounded hover:bg-gray-100">⋯</button>
