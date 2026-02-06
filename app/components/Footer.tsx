@@ -21,8 +21,8 @@ const Footer = () => {
     </div>
 
     {/* mobile footer */}
-     <div className="md:hidden fixed bottom-3 left-0 right-0 z-50 px-4">
-        <div className="bg-white rounded-3xl shadow-lg px-6 py-3 flex items-center justify-between">
+     <div className="md:hidden w-full mt-1.5 left-0 right-0 z-50 px-4">
+        <div className="bg-gray-100 rounded-3xl px-6 py-3 flex items-center justify-between">
           <Link href="#"><Image src={home} alt="home" width={22} height={22} /></Link>
           <Link href="#"><Image src={timer} alt="history" width={22} height={22} /></Link>
           <Link href="#"><Image src={notification} alt="bell" width={22} height={22} /></Link>

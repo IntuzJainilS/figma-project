@@ -14,10 +14,10 @@ const Header = () => {
         <header className='hidden md:flex items-center justify-between rounded-xl px-6 py-4 mb-2 bg-gray-100 border-b border-gray-100'>
             <div className='flex items-center gap-4'>
                 <div className='flex items-center gap-2'>
-                    <button className='p-1 hover:bg-gray-100 rounded-md transition-colors'>
+                    <button className='p-1 md:w-8  hover:bg-gray-100 rounded-md transition-colors'>
                         <Image src={icon} alt="menu" width={20} height={20} />
                     </button>
-                    <button className='p-1 hover:bg-gray-100 rounded-md transition-colors'>
+                    <button className='p-1 md:w-8 hover:bg-gray-100 rounded-md transition-colors'>
                         <Image src={star} alt="favorite" width={20} height={20} />
                     </button>
                 </div>
@@ -37,17 +37,18 @@ const Header = () => {
                         type='search' 
                         placeholder='Search' 
                         className='bg-transparent border-none outline-none text-sm ml-2 w-40 focus:ring-0'
-                    />
+                       
+                    /> <span><Link href='#'><Image src = '/Text.svg' height={16} width={20} alt='/'/></Link></span>
                 </div>
 
                 <div className='flex items-center gap-1'>
-                    <button className='p-2 hover:bg-gray-100 rounded-lg transition-colors'>
+                    <button className='p-2 md:w-10  hover:bg-gray-100 rounded-lg transition-colors'>
                         <Image src={light} alt="theme" width={20} height={20} />
                     </button>
-                    <button className='p-2 hover:bg-gray-100 rounded-lg transition-colors'>
+                    <button className='p-2 md:w-10 hover:bg-gray-100 rounded-lg transition-colors'>
                         <Image src={timer} alt="history" width={20} height={20} />
                     </button>
-                    <button className='p-2 hover:bg-gray-100 rounded-lg transition-colors'>
+                    <button className='p-2 md:w-10 hover:bg-gray-100 rounded-lg transition-colors'>
                         <Image src={notification} alt="notifications" width={20} height={20} />
                     </button>
                 </div>

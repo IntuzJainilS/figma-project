@@ -63,12 +63,9 @@ export default function Home() {
                   {item.title}
                 </p>
                 <div className="flex justify-end items-center shrink-0 ml-2">
-                  <Image src={item.image} alt="icon" height={24} width={33} className="opacity-100" />
+                  <Image src={item.image} alt="icon" height={28} width={38} className="opacity-100" />
                 </div>
-
               </div>
-
-
               <div className="flex justify-between items-end mt-4">
                 <h2 className="text-lg sm:text-2xl font-semibold leading-tight">
                   {item.value}

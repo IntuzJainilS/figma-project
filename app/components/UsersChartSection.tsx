@@ -1,5 +1,8 @@
 "use client";
 
+import graphicon from '@/public/graph.svg'
+import downicon from '@/public/down.svg'
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -30,7 +33,7 @@ export default function UsersChartSection() {
         labels: ["Jan", "", "Feb", "", "Mar", "", "Apr", "", "May", "", "Jun", ""],
         datasets: [
             {
-                data: [40, 10, 20, 30, 25, 40, 55, 35, 42, 60, 50, 55],
+                data: [40, 38, 15, 30, 25, 40, 55, 35, 42, 60, 50, 55],
                 borderColor: "#a855f7",
                 borderWidth: 2,
                 tension: 0,
@@ -91,10 +94,16 @@ export default function UsersChartSection() {
                         <option>Year</option>
                     </select>
 
-                    <select className="border rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
-                        <option>Graph1</option>
-                        <option>Graph2</option>
-                        <option>Graph3</option>
+                    {/* <select className="border rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
+                        <option className='bg-gray-300'>📈</option>
+                        <option className='bg-gray-300'>📊</option>
+                        <option className='bg-gray-300'>📉</option>
+                    </select> */}
+
+                     <select className="border rounded-lg hidden md:block px-2 py-1 text-sm hover:bg-gray-200">
+                        <option >Graph 1</option>
+                        <option >Graph 2</option>
+                        <option >Graph 2</option>
                     </select>
 
                     {/* <button className="p-2 rounded hover:bg-gray-100">📈</button> */}

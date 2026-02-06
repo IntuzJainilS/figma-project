@@ -1,4 +1,6 @@
 "use client";
+import { useEffect, useState } from "react";
+
 
 import {
   Chart as ChartJS,
@@ -12,6 +14,16 @@ import { Bar } from "react-chartjs-2";
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
 export default function DeviceLocationTraffic() {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   const deviceData = {
     labels: ["Linux", "Mac", "iOS", "Windows", "Android", "Other"],
     datasets: [
@@ -27,8 +39,8 @@ export default function DeviceLocationTraffic() {
         ],
         borderRadius: 16,
         borderSkipped: false,
-        barThickness: 60,
-        categoryPercentage: 0.6,
+        barThickness: isMobile ? 28 : 60,
+        categoryPercentage: isMobile ? 0.8 : 0.6,
         barPercentage: 0.9,
       },
     ],
@@ -42,8 +54,8 @@ export default function DeviceLocationTraffic() {
         backgroundColor: "#f3f4f6",
         borderRadius: 16,
         borderSkipped: false,
-        barThickness: 60,
-        categoryPercentage: 0.6,
+        barThickness: isMobile ? 28 : 60,
+        categoryPercentage: isMobile ? 0.8 : 0.6,
         barPercentage: 0.9,
       },
     ],
